@@ -17,8 +17,8 @@ def deal(url):
     file = open(url)
     text = file.read()
 
-    text = text.replace("/home/howin/Desktop/DimChat/Dimchat-Doc/img/Screen ", "https://raw.githubusercontent.com/How-invin/DimChat/master/Dimchat-Doc/img/Screen%20")
-    text = text.replace("https://gitee.com/howin98/DimChat/raw/master/Dimchat-Doc/img/Screen%20" ,"https://raw.githubusercontent.com/How-invin/DimChat/master/Dimchat-Doc/img/Screen%20")
+    text = text.replace("/home/howin/Desktop/DimChat/Dimchat-Doc/img/Screen ", "https://gitee.com/howin98/DimChat/raw/master/Dimchat-Doc/img/Screen%20")
+    text = text.replace("https://raw.githubusercontent.com/How-invin/DimChat/master/Dimchat-Doc/img/Screen%20", "https://gitee.com/howin98/DimChat/raw/master/Dimchat-Doc/img/Screen%20")
     file.close()
     file = open(url, 'w')
     file.write(text)
