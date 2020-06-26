@@ -1,7 +1,8 @@
 package com.example.dimchatserver;
 
 import howin.dimChat.dao.LoginDao;
-import howin.dimChat.models.LoginModel;
+import howin.dimChat.models.LoginUser;
+import howin.dimChat.models.User;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -9,10 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class DemoApplicationTests {
-    @Autowired
+
+    @Resource
 	private LoginDao loginDao;
 
     private String email = "test@test.com";
@@ -20,7 +24,7 @@ class DemoApplicationTests {
 
 	@Test
 	void createUser() {
-	        loginDao.createUser(email, password);
+	        loginDao.createUser(email, password, "");
 	}
 
 	@Test
@@ -35,7 +39,7 @@ class DemoApplicationTests {
 
 	@Test
 	void getPassword(){
-		LoginModel res = loginDao.getPassword(email);
+		User res = loginDao.getPassword(email);
 		Assert.assertEquals(res.getPassword() , password);
 	}
 
