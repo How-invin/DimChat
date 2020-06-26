@@ -32,7 +32,7 @@ public class AuthController {
         user.setUsername(registerUser.get("username"));
         user.setPassword(bCryptPasswordEncoder.encode(registerUser.get("password")));
         user.setRole("ROLE_USER");
-        loginDao.createUser(user.getUsername(), user.getPassword(), user.getRole());
-        return user.toString();
+        int res = loginDao.createUser(user.getUsername(), user.getPassword(), user.getRole());
+        return "";
     }
 }
